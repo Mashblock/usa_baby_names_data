@@ -2,7 +2,7 @@ require 'scraperwiki'
 require 'net/http'
 require 'nokogiri'
 
-(1998..2014).each do |year|
+(1998..2015).each do |year|
   uri = URI('https://www.ssa.gov/cgi-bin/popularnames.cgi')
   res = Net::HTTP.post_form(uri, year: year, top: 100, number: 'n')
   doc = Nokogiri::HTML(res.body)
